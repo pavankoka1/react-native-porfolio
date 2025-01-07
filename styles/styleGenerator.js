@@ -53,4 +53,6 @@ const generateDynamicStyles = () => {
     return StyleSheet.create(styles);
 };
 
-export default generateDynamicStyles;
+const dynamicStyles = generateDynamicStyles();
+
+export default dynamicStyles;

@@ -5,10 +5,8 @@ import Animated, {
     useAnimatedStyle,
     withTiming,
 } from "react-native-reanimated";
-import generateDynamicStyles from "@/styles/styleGenerator";
+import dynamicStyles from "@/styles/styleGenerator";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
-
-const styles = generateDynamicStyles();
 
 // Animated text component
 const AnimatedText = ({ children, startDelay, animationDuration }) => {
@@ -43,13 +41,13 @@ const Summary = () => {
                 <FontAwesome5 name="chess-pawn" size={64} color="#343432" />
                 <View>
                     <Text
-                        style={styles["mont-b-28"]}
+                        style={dynamicStyles["mont-sb-28"]}
                         className="text-[#343432]"
                     >
                         Koka
                     </Text>
                     <Text
-                        style={styles["mont-m-12"]}
+                        style={dynamicStyles["mont-m-12"]}
                         className="text-[#343432]"
                     >
                         Partners in Quality, Committed to Loyalty
@@ -58,7 +56,7 @@ const Summary = () => {
             </View>
             <AnimatedText startDelay={300} animationDuration={500}>
                 <Text
-                    style={styles["mont-r-38"]}
+                    style={dynamicStyles["mont-r-34"]}
                     className="tracking-tight text-[#343432]"
                 >
                     Empowering Your
@@ -66,7 +64,7 @@ const Summary = () => {
             </AnimatedText>
             <AnimatedText startDelay={300} animationDuration={500}>
                 <Text
-                    style={styles["mont-r-38"]}
+                    style={dynamicStyles["mont-r-34"]}
                     className="tracking-tight text-[#343432]"
                 >
                     Digital Vision
@@ -74,7 +72,7 @@ const Summary = () => {
             </AnimatedText>
             <AnimatedText startDelay={700} animationDuration={500}>
                 <Text
-                    style={styles["mont-r-18"]}
+                    style={dynamicStyles["mont-r-18"]}
                     className="mt-8 text-[#525252] leading-8"
                 >
                     We are a team of passionate software developers and expert
@@ -84,7 +82,7 @@ const Summary = () => {
             </AnimatedText>
             <AnimatedText startDelay={1200} animationDuration={500}>
                 <Text
-                    style={styles["mont-r-18"]}
+                    style={dynamicStyles["mont-r-18"]}
                     className="mt-4 text-[#525252] leading-8"
                 >
                     With a focus on mobile and web applications, including
@@ -95,7 +93,7 @@ const Summary = () => {
             </AnimatedText>
             <AnimatedText startDelay={1700} animationDuration={500}>
                 <Text
-                    style={styles["mont-r-18"]}
+                    style={dynamicStyles["mont-r-18"]}
                     className="mt-4 text-[#525252] leading-8"
                 >
                     Let us empower your venture with cutting-edge solutions and

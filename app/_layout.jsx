@@ -5,7 +5,6 @@ import { createStaticNavigation } from "@react-navigation/native";
 import "@/global.css";
 import "@/styles/index.css";
 import { useEffect } from "react";
-import generateDynamicStyles from "@/styles/typography";
 import loadFonts from "@/styles/fonts";
 
 export default function RootLayout() {

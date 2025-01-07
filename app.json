@@ -10,8 +10,9 @@
         "newArchEnabled": true,
         "assetBundlePatterns": ["**/*"],
         "ios": {
-            "supportsTablet": true,
-            "bundleIdentifier": "com.koka.portfolio"
+            "bundleIdentifier": "com.koka.portfolio",
+            "buildNumber": "1.0.0",
+            "supportsTablet": true
         },
         "android": {
             "adaptiveIcon": {
@@ -46,7 +47,7 @@
                 "origin": false
             },
             "eas": {
-                "projectId": "bdbe8d16-5de6-47c6-89c1-d46d3cf8a672"
+                "projectId": "9d8deaa7-ecb3-40a0-abb1-236dc07452f1"
             }
         },
         "owner": "pavankoka1"
