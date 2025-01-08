@@ -1,25 +1,28 @@
 import React, { useEffect, useRef, useState } from "react";
-import { View, Animated, Text, Easing } from "react-native";
+import { View, Text } from "react-native";
+import anime from "animejs/lib/anime.es.js"; // Import anime.js
 import dynamicStyles from "@/styles/styleGenerator";
 
-function RowItem({ animateTo, label = "row" }) {
-    const animatedValue = useRef(new Animated.Value(0)).current;
+function RowItem({ animateTo, label = "row", index }) {
+    const animatedRef = useRef(null);
 
     useEffect(() => {
         const animate = () => {
-            Animated.timing(animatedValue, {
-                toValue: animateTo,
-                duration: 1000,
-                easing: Easing.inOut(Easing.ease),
-                useNativeDriver: false,
-            }).start();
+            anime({
+                targets: animatedRef.current,
+                translateY: animateTo,
+                duration: 1200, // Increased duration for smoother animation
+                easing: "easeInOutExpo", // Smoother easing function
+                delay: index * 40, // Staggered delay based on index
+            });
         };
 
         animate(); // Start the animation
-    }, [animatedValue, animateTo]);
+    }, [animateTo]);
 
     return (
-        <Animated.Text
+        <Text
+            ref={animatedRef}
             style={[
                 dynamicStyles["mont-r-16"],
                 {
@@ -27,14 +30,7 @@ function RowItem({ animateTo, label = "row" }) {
                     top: 50,
                     left: "50%",
                     padding: 24,
-                    transform: [
-                        {
-                            translateY: animatedValue,
-                        },
-                        {
-                            translateX: "-50%",
-                        },
-                    ],
+                    transform: [{ translateX: "-50%" }],
                     width: 200,
                     borderRadius: 20,
                     height: 80,
@@ -47,7 +43,7 @@ function RowItem({ animateTo, label = "row" }) {
             ]}
         >
             {label}
-        </Animated.Text>
+        </Text>
     );
 }
 
@@ -77,7 +73,7 @@ const MyComponent = () => {
     };
 
     useEffect(() => {
-        // Shuffle values every 5 seconds
+        // Shuffle values every 3 seconds
         const interval = setInterval(shuffleValues, 3000);
 
         // Clean up the interval on component unmount
@@ -93,6 +89,7 @@ const MyComponent = () => {
                         key={index}
                         animateTo={values[index]}
                         label={index + 1}
+                        index={index} // Pass index to RowItem for staggered animation
                     />
                 ))}
         </View>

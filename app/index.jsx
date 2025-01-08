@@ -16,6 +16,8 @@ import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import Summary from "@/components/home/Summary";
 import Benefits from "@/components/home/Benefits";
 import JugglingList from "@/components/home/JugglingList";
+import ConcentricCircles from "@/components/home/ConcentricCircles";
+import RadialAnimation from "@/components/home/RadialAnimation";
 
 const { height, width } = Dimensions.get("window");
 
@@ -76,6 +78,8 @@ const App = () => {
                         </View>
                     </View>
                     <JugglingList />
+                    <ConcentricCircles />
+                    <RadialAnimation />
                 </ScrollView>
             </SafeAreaView>
         </SafeAreaProvider>
