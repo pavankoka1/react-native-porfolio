@@ -11,7 +11,7 @@ function RowItem({ animateTo, label = "row" }) {
                 toValue: animateTo,
                 duration: 1000,
                 easing: Easing.inOut(Easing.ease),
-                useNativeDriver: true,
+                useNativeDriver: false,
             }).start();
         };
 
@@ -52,11 +52,7 @@ function RowItem({ animateTo, label = "row" }) {
 }
 
 const MyComponent = () => {
-    const initialValues = {};
-    for (let i = 0; i < 10; i++) {
-        initialValues[i] = i * 100;
-    }
-
+    const initialValues = Array.from({ length: 10 }, (_, index) => index * 100);
     const [values, setValues] = useState(initialValues);
 
     const shuffleValues = () => {
@@ -82,7 +78,7 @@ const MyComponent = () => {
 
     useEffect(() => {
         // Shuffle values every 5 seconds
-        const interval = setInterval(shuffleValues, 5000);
+        const interval = setInterval(shuffleValues, 3000);
 
         // Clean up the interval on component unmount
         return () => clearInterval(interval);
